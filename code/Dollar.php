@@ -4,7 +4,7 @@ namespace code;
 class Dollar
 {
     /**
-     * @var float
+     * @var $amount float
      */
     public $amount;
 
@@ -17,12 +17,14 @@ class Dollar
         $this->amount = $amount;
     }
 
+
     /**
-     * @param $multiplier float
+     * @param $multiplier
+     * @return Dollar
      */
     public function times($multiplier)
     {
-        $this->amount *= $multiplier;
+        return new Dollar($this->amount * $multiplier);
     }
 
 }
