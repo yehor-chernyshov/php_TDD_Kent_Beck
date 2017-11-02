@@ -6,7 +6,7 @@ class Dollar
     /**
      * @var $amount float
      */
-    public $amount;
+    private $amount;
 
     /**
      * Dollar constructor.
