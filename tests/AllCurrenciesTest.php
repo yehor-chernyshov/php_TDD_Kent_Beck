@@ -15,4 +15,13 @@ class AllCurrenciesTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals(15, $product->amount);
     }
 
+    public function testEquality()
+    {
+        $five = new Dollar(5);
+        $newFive = new Dollar(5);
+        $this->assertTrue($five->equals($newFive));
+        $newSix = new Dollar(6);
+        $this->assertFalse($five->equals($newSix));
+    }
+
 }
