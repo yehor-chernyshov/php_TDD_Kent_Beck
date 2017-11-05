@@ -23,17 +23,19 @@ class AllCurrenciesTest extends \PHPUnit\Framework\TestCase
 
     public function testEquality()
     {
-        $five = new Dollar(5);
-        $newFive = new Dollar(5);
-        $this->assertTrue($five->equals($newFive));
-        $newSix = new Dollar(6);
-        $this->assertFalse($five->equals($newSix));
+        $fiveDollars = new Dollar(5);
+        $newFiveDollars = new Dollar(5);
+        $this->assertTrue($fiveDollars->equals($newFiveDollars));
+        $newSixDollars = new Dollar(6);
+        $this->assertFalse($fiveDollars->equals($newSixDollars));
 
-        $five = new Franc(5);
-        $newFive = new Franc(5);
-        $this->assertTrue($five->equals($newFive));
-        $newSix = new Franc(6);
-        $this->assertFalse($five->equals($newSix));
+        $fiveFrancs = new Franc(5);
+        $newFiveFrancs = new Franc(5);
+        $this->assertTrue($fiveFrancs->equals($newFiveFrancs));
+        $newSixFrancs = new Franc(6);
+        $this->assertFalse($fiveFrancs->equals($newSixFrancs));
+
+        $this->assertFalse($fiveFrancs->equals($fiveDollars));
     }
 
 
