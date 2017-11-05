@@ -3,36 +3,37 @@ namespace tests;
 
 use code\Dollar;
 use code\Franc;
+use code\Money;
 
 class AllCurrenciesTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testMultiplication()
     {
-        $five = new Dollar(5);
-        $this->assertEquals(new Dollar(10), $five->times(2));
-        $this->assertEquals(new Dollar(15), $five->times(3));
+        $five = Money::dollar(5);
+        $this->assertEquals(Money::dollar(10), $five->times(2));
+        $this->assertEquals(Money::dollar(15), $five->times(3));
     }
 
     public function testFrancMultiplication()
     {
-        $five = new Franc(5);
-        $this->assertEquals(new Franc(10), $five->times(2));
-        $this->assertEquals(new Franc(15), $five->times(3));
+        $five = Money::franc(5);
+        $this->assertEquals(Money::franc(10), $five->times(2));
+        $this->assertEquals(Money::franc(15), $five->times(3));
     }
 
     public function testEquality()
     {
-        $fiveDollars = new Dollar(5);
-        $newFiveDollars = new Dollar(5);
+        $fiveDollars = Money::dollar(5);
+        $newFiveDollars = Money::dollar(5);
         $this->assertTrue($fiveDollars->equals($newFiveDollars));
-        $newSixDollars = new Dollar(6);
+        $newSixDollars = Money::dollar(6);
         $this->assertFalse($fiveDollars->equals($newSixDollars));
 
-        $fiveFrancs = new Franc(5);
-        $newFiveFrancs = new Franc(5);
+        $fiveFrancs = Money::franc(5);
+        $newFiveFrancs = Money::franc(5);
         $this->assertTrue($fiveFrancs->equals($newFiveFrancs));
-        $newSixFrancs = new Franc(6);
+        $newSixFrancs = Money::franc(6);
         $this->assertFalse($fiveFrancs->equals($newSixFrancs));
 
         $this->assertFalse($fiveFrancs->equals($fiveDollars));
