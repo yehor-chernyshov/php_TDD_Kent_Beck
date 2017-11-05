@@ -28,6 +28,12 @@ class AllCurrenciesTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue($five->equals($newFive));
         $newSix = new Dollar(6);
         $this->assertFalse($five->equals($newSix));
+
+        $five = new Franc(5);
+        $newFive = new Franc(5);
+        $this->assertTrue($five->equals($newFive));
+        $newSix = new Franc(6);
+        $this->assertFalse($five->equals($newSix));
     }
 
 
