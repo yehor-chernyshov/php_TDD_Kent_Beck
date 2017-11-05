@@ -5,3 +5,4 @@ PHP code examples for 'Test-driven development by example' Kent Beck's book
 2. Side effects in the class Dollar
 3. equals()
 4. Encapsulate amount attribute 
+5. 5 CHF * 2 = 10 CHF
