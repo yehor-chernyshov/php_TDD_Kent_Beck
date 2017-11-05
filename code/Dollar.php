@@ -1,12 +1,8 @@
 <?php
 namespace code;
 
-class Dollar
+class Dollar extends Money
 {
-    /**
-     * @var $amount float
-     */
-    private $amount;
 
     /**
      * Dollar constructor.
@@ -24,15 +20,6 @@ class Dollar
     public function times($multiplier)
     {
         return new Dollar($this->amount * $multiplier);
-    }
-
-    /**
-     * @param $object Dollar
-     * @return bool
-     */
-    public function equals($object)
-    {
-        return $this->amount == $object->amount;
     }
 
 }

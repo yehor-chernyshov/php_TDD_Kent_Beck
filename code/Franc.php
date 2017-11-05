@@ -1,13 +1,8 @@
 <?php
 namespace code;
 
-class Franc
+class Franc extends Money
 {
-
-    /**
-     * @var $amount float
-     */
-    private $amount;
 
     /**
      * Franc constructor.
@@ -27,12 +22,4 @@ class Franc
         return new Franc($this->amount * $multiplier);
     }
 
-    /**
-     * @param $object Franc
-     * @return bool
-     */
-    public function equals($object)
-    {
-        return $this->amount == $object->amount;
-    }
 }
